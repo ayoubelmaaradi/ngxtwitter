@@ -1,0 +1,29 @@
+.infinite-cards {
+  nb-card {
+    &.own-scroll {
+      width: fit-content;
+      height: 500px;
+      // padding: 1px;
+    }
+  }
+}
+.radius {
+  border-radius: 6px;
+  border-bottom-color: #7ACAFF;
+}
+
+.col-md-4 {
+  padding-right: 2px;
+  padding-left: 2px;
+}
+::-webkit-scrollbar {
+  // Width of vertical scroll bar
+  width: 8px;
+  // Height of horizontal scroll bar
+  height: 10px;
+
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #c2c9d2;
+}

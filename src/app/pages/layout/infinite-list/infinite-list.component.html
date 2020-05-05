@@ -1,0 +1,54 @@
+<div class="infinite-cards row">
+  <div class="col-md-4">
+    <nb-card class="own-scroll">
+      <nb-card-header class="text-primary">Finance News</nb-card-header>
+      <nb-list
+        nbInfiniteList
+        [threshold]="500"
+        (bottomThreshold)="loadNext(firstCard)">
+        <nb-list-item *ngFor="let headLine of firstCard.news">
+          <ngx-news-head-line [date]="headLine.date" [text]="headLine.text"></ngx-news-head-line>
+        </nb-list-item>
+        <nb-list-item *ngFor="let _ of firstCard.placeholders">
+          <ngx-news-post-placeholder></ngx-news-post-placeholder>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+  <div class="col-md-4">
+    <nb-card class="own-scroll">
+      <nb-card-header class="text-primary">News Head Lines Yahoo Finance</nb-card-header>
+      <nb-list
+        nbInfiniteList
+        [threshold]="500"
+        (bottomThreshold)="loadNext(firstCard)">
+        <nb-list-item *ngFor="let headLine of secondCard.news">
+          <ngx-news-head-line [date]="headLine.date" [text]="headLine.text"></ngx-news-head-line>
+        </nb-list-item>
+        <nb-list-item *ngFor="let _ of firstCard.placeholders">
+          <ngx-news-post-placeholder></ngx-news-post-placeholder>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+  <div class="col-md-4">
+    <nb-card class="own-scroll">
+      <nb-card-header>
+        Search query
+        <input type="text" [(ngModel)]="query" nbInput shape="round" class="img-thumbnail radius">
+        <button (click)="searchQuery()"><i class="fa fa-search"></i></button>
+      </nb-card-header>
+      <nb-list
+        nbInfiniteList
+        [threshold]="500"
+        (bottomThreshold)="loadNext(firstCard)">
+        <nb-list-item *ngFor="let head of thirdCard.news">
+          <ngx-news-head-line [date]="head.date" [text]="head.text"></ngx-news-head-line>
+        </nb-list-item>
+        <nb-list-item *ngFor="let _ of firstCard.placeholders">
+          <ngx-news-post-placeholder></ngx-news-post-placeholder>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+</div>
